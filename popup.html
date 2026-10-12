@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>AlgoCoach</h1>
+    <p class="subtitle">AI-assisted practice hints</p>
+
+    <details id="settingsBlock">
+      <summary>API Key Settings</summary>
+      <input type="password" id="apiKeyInput" placeholder="Paste your Gemini API key" />
+      <button id="saveKeyBtn">Save key</button>
+      <p id="keyStatus" class="keyStatus"></p>
+    </details>
+
+    <button id="checkPageBtn">Check current page</button>
+    <button id="extractBtn">Extract problem + code</button>
+    <button id="hintBtn" class="primary">Get AI Hint</button>
+    <button id="checkReviewsBtn" class="secondary">Check review reminders now</button>
+
+    <div id="result" class="result"></div>
+  </div>
+
+  <script src="markdown.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

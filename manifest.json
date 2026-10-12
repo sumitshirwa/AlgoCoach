@@ -1,0 +1,42 @@
+{
+  "manifest_version": 3,
+  "name": "AlgoCoach",
+  "version": "0.2.0",
+  "description": "AI-assisted coding hints with spaced-repetition reminders for competitive programming practice.",
+
+  "permissions": ["activeTab", "storage", "alarms", "notifications"],
+  "host_permissions": ["https://generativelanguage.googleapis.com/*"],
+
+  "background": {
+    "service_worker": "background.js"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://leetcode.com/*"],
+      "js": ["world-main.js"],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ],
+
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
